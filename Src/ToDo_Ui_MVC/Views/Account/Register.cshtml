@@ -1,0 +1,46 @@
+﻿@model User
+
+
+@{
+    ViewData["Title"] = "ثبت‌ نام کاربر جدید";
+}
+
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-3 mx-auto" style="max-width: 500px;">
+        <div class="card-header bg-success text-white text-center">
+            <h4>فرم ثبت‌نام</h4>
+        </div>
+        <div class="card-body">
+
+            <form method="post" asp-action="Register">
+
+              
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">نام و نام خانوادگی</label>
+                    <input asp-for="Name" class="form-control" required />
+                </div>
+
+             
+                <div class="mb-3">
+                    <label asp-for="UserName" class="form-label">نام کاربری</label>
+                    <input asp-for="UserName" class="form-control" required />
+                </div>
+
+              
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label">رمز عبور</label>
+                    <input asp-for="Password" type="password" class="form-control" required />
+                </div>
+
+             
+
+                <button type="submit" class="btn btn-primary w-100 mt-3">ثبت‌نام</button>
+                <div class="text-center mt-2">
+                    <a asp-action="Login">قبلاً ثبت‌نام کرده‌اید؟ ورود</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
