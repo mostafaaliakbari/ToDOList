@@ -11,5 +11,15 @@ public class UserService : IUserService
     {
         _userRepo.Create(user);
     }
+
+
+
+
+
+
+    public User GetUserById(int id)
+    {
+        return _userRepo.GetById(id);
+    }
 }
 

@@ -11,6 +11,18 @@ namespace ToDo_Ui_MVC.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Login(string username, string password)
+        {
+            var user = _userService.Login(username, password);
+            if (user != null)
+            {
+                var routeValues = new { userId = user.Id };
+                return RedirectToAction("Index", "Todo", routeValues);
+            }
+            ViewBag.Error = "نام کاربری یا رمز عبور اشتباه است";
+            return View();
+        }
         [HttpGet]
         public IActionResult Register()
         {
