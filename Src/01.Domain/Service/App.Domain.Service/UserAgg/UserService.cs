@@ -1,7 +1,11 @@
 ﻿
 public class UserService : IUserService
 {
-    private readonly IUserRepo _userRepo = new UserRepo();
+    private readonly IUserRepo _userRepo;
+    public UserService(IUserRepo userRepo )
+    {
+        _userRepo = userRepo;
+    }
     public User Login(string username, string password)
     {
         return _userRepo.GetUser(username, password);

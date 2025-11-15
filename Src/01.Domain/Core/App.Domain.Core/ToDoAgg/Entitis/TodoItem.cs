@@ -13,9 +13,3 @@ public class TodoItem
     public ToDoStatus status { get; set; }
 }
 
-public enum ToDoStatus
-{
-    Pending = 1,   
-    Completed,      
-    Overdue
-}

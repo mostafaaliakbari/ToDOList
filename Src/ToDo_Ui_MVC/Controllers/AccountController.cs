@@ -4,7 +4,11 @@ namespace ToDo_Ui_MVC.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly IUserService _userService = new UserService();
+        private readonly IUserService _userService;
+        public AccountController(IUserService UserService) 
+        {
+            _userService = UserService;
+        }
 
         [HttpGet]
         public IActionResult Login()

@@ -3,7 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 public class UserRepo : IUserRepo
 {
-   private readonly ToDoDbContext context = new ToDoDbContext();
+    private readonly ToDoDbContext context;
+    public UserRepo(ToDoDbContext toDoDbContext)
+    {
+        context = toDoDbContext;
+    }
 
     public void Create(User user)
     {

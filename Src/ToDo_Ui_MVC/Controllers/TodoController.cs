@@ -4,7 +4,12 @@ namespace ToDo_Ui_MVC.Controllers
 {
     public class TodoController : Controller
     {
-        private readonly ITodoService _todoService = new ToDoService();
+        private readonly ITodoService _todoService;
+      
+        public TodoController(ITodoService todoService)
+        {
+            _todoService = todoService;
+        }
         public IActionResult Index(int userId)
         {
             var todos = _todoService.GetUserTodos(userId);

@@ -4,7 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 public class TodoRepo : ITodoRepo
 {
-    private readonly ToDoDbContext _dbContext = new ToDoDbContext();
+    private readonly ToDoDbContext _dbContext;
+    public TodoRepo(ToDoDbContext dbContext)
+    {
+        _dbContext = dbContext;
+    }
     public void Create(TodoItem todo)
     {
         todo.CreatedDate = DateTime.Now;

@@ -2,7 +2,11 @@
 
 public class ToDoService : ITodoService
 {
-    private readonly TodoRepo _todoRepo = new TodoRepo();
+    private readonly ITodoRepo _todoRepo;
+    public ToDoService(ITodoRepo todoRepo)
+    {
+        _todoRepo = todoRepo;
+    }
     public void CreateTodo(TodoItem todo)
     {
         _todoRepo.Create(todo);
