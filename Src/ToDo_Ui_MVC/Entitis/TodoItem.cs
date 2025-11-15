@@ -10,4 +10,12 @@ public class TodoItem
     public Category Category { set; get; }
     public DateTime? DueDate { get; set; }
     public int CategoryId { get; set; }
+    public ToDoStatus status { get; set; }
+}
+
+public enum ToDoStatus
+{
+    Pending = 1,   
+    Completed,      
+    Overdue
 }

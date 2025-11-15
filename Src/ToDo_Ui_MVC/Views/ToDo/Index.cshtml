@@ -3,7 +3,11 @@
 @{
     ViewData["Title"] = "کارهای من";
 }
-
+<style>
+    .bg-light-success { background-color: #d4edda; }
+    .bg-light-primary { background-color: #d1ecf1; }
+    .bg-light-danger { background-color: #f8d7da; }
+</style>
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2>کارهای من</h2>
@@ -22,7 +26,8 @@
             @foreach (var todo in Model)
             {
                 <div class="col-md-6 mb-3">
-                    <div class="card @(todo.IsCompleted ? "border-success" : "border-warning")">
+                    <div class="card @(todo.status == ToDoStatus.Completed ? "border-success" :
+                                                               todo.status == ToDoStatus.Overdue ? "border-danger" : "border-primary")">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-start">
                                 <div>
@@ -36,6 +41,12 @@
                                     }
                                 </div>
                                 <span class="badge bg-secondary">@todo.Category?.Title</span>
+                                <br>
+                                <span class="badge @(todo.status == ToDoStatus.Completed ? "bg-success" :
+                                                                                          todo.status == ToDoStatus.Overdue ? "bg-danger" : "bg-primary") mt-1">
+                                    @(todo.status == ToDoStatus.Completed ? "انجام شده" :
+                                                                todo.status == ToDoStatus.Overdue ? "عقب افتاده" : "در انتظار")
+                        </span>
                             </div>
 
                             <div class="d-flex gap-2 mt-3">

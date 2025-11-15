@@ -40,20 +40,6 @@ namespace ToDo_Ui_MVC.Controllers
             _todoService.CreateTodo(todo);
             return RedirectToAction("Index", new { userId = userId });
         }
-        //[HttpPost]
-        //public IActionResult Create(TodoItem todo, int userId)
-        //{
-        //    var todoToCreate = new TodoItem
-        //    {
-        //        Title = "تست ثابت",
-        //        UserId = 1,      // 🔥 هاردکد
-        //        CategoryId = 1,  // 🔥 هاردکد
-        //        CreatedDate = DateTime.Now,
-        //        IsCompleted = false
-        //    };
-
-        //    _todoService.CreateTodo(todoToCreate);
-        //    return RedirectToAction("Index", new { userId = 1 });
-        //}
+      
     }
 }
