@@ -13,6 +13,7 @@ namespace ToDo_Ui_MVC.Controllers
         public IActionResult Index(int userId)
         {
             var todos = _todoService.GetUserTodos(userId);
+            ViewBag.UserId = userId;
             return View(todos);
         }
 

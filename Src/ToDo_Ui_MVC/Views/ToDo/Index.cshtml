@@ -11,7 +11,7 @@
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2>کارهای من</h2>
-        <a asp-action="Create" asp-route-userId="@Model.FirstOrDefault()?.UserId" class="btn btn-success">➕ کار جدید</a>
+        <a asp-action="Create" asp-route-userId="@ViewBag.UserId" class="btn btn-success">➕ کار جدید</a>
     </div>
 
     @if (!Model.Any())
