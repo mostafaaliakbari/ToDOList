@@ -6,16 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="CategoryAgg\AppService\" />
-    <Folder Include="CategoryAgg\Data\" />
-    <Folder Include="CategoryAgg\Dtos\" />
-    <Folder Include="CategoryAgg\Enums\" />
-    <Folder Include="ToDoAgg\AppService\" />
-    <Folder Include="ToDoAgg\Dtos\" />
-    <Folder Include="UserAgg\AppService\" />
-    <Folder Include="UserAgg\Dtos\" />
-    <Folder Include="UserAgg\Enums\" />
-  </ItemGroup>
-
 </Project>
